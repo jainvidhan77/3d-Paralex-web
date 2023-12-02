@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Website</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="item">
+                <a href="">Travels</a>
+            </div>
+            <div class="item">
+                <a href="">Mathe.</a>
+            </div>
+            <div class="item">
+                <a href="">Creative</a>
+            </div>
+            <div class="item">
+                <a href="">Coding</a>
+            </div>
+            <div class="item">
+                <a href="">Camp</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="parallax-section">
+
+        <div class="title">
+            <div class="text">
+                <h1>THE</h1>
+                <span>
+                    Cappadocia
+                </span>
+            </div>
+        </div>
+
+        <img class="balloons balloon1" src="img/balloon1.png" alt="Hot Air Balloons - Cappadocia">
+
+        <img class="balloons balloon2" src="img/balloon2.png" alt="Hot Air Balloons - Cappadocia">
+
+        <img class="balloons balloon3" src="img/balloon3.png" alt="Hot Air Balloons - Cappadocia">
+
+        <img class="balloons balloon4" src="img/balloon4.png" alt="Hot Air Balloons - Cappadocia">
+    </section>
+
+    <section class="sections">
+        <p>Hot air balloon rides in Cappadocia typically take place in the early morning or late afternoon, when the wind is calm and the air is cooler. The balloons are filled with hot air, which makes them rise into the air. During the ride, you'll be able to enjoy breathtaking views of the Cappadocian landscape, including the fairy chimneys, rock-cut temples, and underground cities. Some hot air balloon rides also include a champagne breakfast or a sunset picnic.</p>
+
+        <p>It's important to note that hot air balloon rides in Cappadocia are weather dependent and may be cancelled due to wind or other adverse conditions. It's a good idea to book your ride in advance and to be flexible with your travel plans in case of weather-related cancellations.</p>
+    </section>
+    <section class="sections">
+        <h2>Hope this helps :)</h2>
+    </section>
+
+    <script>
+
+        function parallax() {
+
+            const section = document.querySelector('.parallax-section');
+            const balloon1 = document.querySelector('.balloon1');
+            const balloon2 = document.querySelector('.balloon2');
+            const balloon3 = document.querySelector('.balloon3');
+            const balloon4 = document.querySelector('.balloon4');
+            const text = document.querySelector('.title .text');
+
+            window.addEventListener('scroll', () => {
+
+                let scrollPos = window.pageYOffset;
+
+                section.style.backgroundPositionY = -(scrollPos / 12) + 'px';
+
+                balloon1.style.transform = "translateY(-" + (scrollPos / 2.5) + 'px)';
+
+                balloon2.style.transform = "translateY(-" + (scrollPos / 3.5) + 'px)';
+
+                balloon3.style.transform = "translateY(-" + (scrollPos / 2) + 'px)';
+
+                balloon4.style.transform = "translateY(-" + (scrollPos / 4) + 'px)';
+
+                title.style.transform = "translateY(" + (scrollPos / 6) + 'px)';
+
+            })
+        }
+
+        parallax();
+    </script>
+</body>
+
+</html>
